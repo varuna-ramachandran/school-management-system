@@ -24,6 +24,8 @@ h6 {
 #wrapper {
   display: flex;
   flex-direction: row;
+  background: #181818;
+
 }
 
 #left {
@@ -229,4 +231,10 @@ h6 {
   #main-footer {
     padding-top: 1rem;
   }
+}
+label{
+    color: white;
+}
+.text-white{
+color: white;
 }

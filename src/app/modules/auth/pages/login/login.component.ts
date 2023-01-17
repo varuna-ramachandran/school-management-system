@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,10 @@ export class LoginComponent {
   passwordVisiblity: boolean = false;
 
   
-  constructor(private fb: FormBuilder){}
+  constructor(
+    private fb: FormBuilder,    
+    private toasterService: ToastrService,
+    ){}
 
   initLoginForm(){
     this.loginForm = this.fb.group(
@@ -53,6 +57,10 @@ export class LoginComponent {
 			this.loginForm.markAllAsTouched();
 			return;
 		}
+    else{
+      this.toasterService.success("Login Success","Success")
+      
+    }
   }
 
   togglePassword(){
